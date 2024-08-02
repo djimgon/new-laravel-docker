@@ -6,3 +6,6 @@ docker-down:
 
 docker-build:
 	docker-compose up --build -d
+
+docker-laravel-install:
+	docker-compose exec php-cli composer create-project laravel/laravel frontend

@@ -5,6 +5,8 @@ RUN apt-get update && apt-get install -y libmcrypt-dev mariadb-client wget unzip
 
 RUN wget https://getcomposer.org/installer -O - -q | php -- --version=1.9.1 --install-dir=/bin --filename=composer --quiet
 
+COPY ./docker/php/conf.d /usr/local/etc/php/conf.d
+
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 WORKDIR /var/www
