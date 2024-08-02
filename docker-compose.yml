@@ -74,6 +74,6 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - ./storage/docker/elasticsearch:/usr/share/elasticsearch/data
+      - ./frontend/storage/docker/elasticsearch:/usr/share/elasticsearch/data
     ports:
       - "9201:9200"
