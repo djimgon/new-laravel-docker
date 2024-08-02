@@ -1,8 +1,8 @@
-docker-up: memory
+docker-up:
 	docker-compose up -d
 
 docker-down:
 	docker-compose down
 
-docker-build: memory
+docker-build:
 	docker-compose up --build -d
