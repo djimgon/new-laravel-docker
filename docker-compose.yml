@@ -5,8 +5,7 @@ services:
       context: ./
       dockerfile: docker/nginx.docker
     volumes:
-      - ./:/var/www
-      - ./docker/nginx/ssl:/etc/nginx/ssl
+      - ./frontend:/var/www
     ports:
       - "8080:80"
     links:
@@ -16,7 +15,7 @@ services:
       context: ./
       dockerfile: docker/php-fpm.docker
     volumes:
-      - ./:/var/www
+      - ./frontend:/var/www
     links:
       - mysql
       - redis
@@ -32,7 +31,7 @@ services:
       context: ./
       dockerfile: docker/php-cli.docker
     volumes:
-      - ./:/var/www
+      - ./frontend:/var/www
     links:
       - mysql
       - redis
